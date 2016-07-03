@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="student" id="BYZ-38-t0r" customClass="ViewController" customModule="图片涂鸦_录音的播放" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xrd-wx-tFo">
+                                <rect key="frame" x="28" y="275" width="30" height="30"/>
+                                <state key="normal" title="旋转"/>
+                                <connections>
+                                    <action selector="rotate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eXu-Na-ETo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yMU-vQ-nw9">
+                                <rect key="frame" x="104" y="275" width="30" height="30"/>
+                                <state key="normal" title="裁剪"/>
+                                <connections>
+                                    <action selector="crop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ahu-Dn-dBR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FSH-Mc-gbt">
+                                <rect key="frame" x="104" y="351" width="90" height="30"/>
+                                <state key="normal" title="显示批阅结果"/>
+                                <connections>
+                                    <action selector="showCorrect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9qb-Rg-eqU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZT2-2g-ivT">
+                                <rect key="frame" x="201" y="275" width="60" height="30"/>
+                                <state key="normal" title="上传作业"/>
+                                <connections>
+                                    <action selector="savedHomeWork:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tnv-BR-UxG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V9e-FT-KTZ">
+                                <rect key="frame" x="62" y="237" width="60" height="30"/>
+                                <state key="normal" title="选取图片"/>
+                                <connections>
+                                    <action selector="selectPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BZE-nb-OsE"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fSP-um-ehz" customClass="ImageCropperView">
+                                <rect key="frame" x="45" y="52" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pI-J6-JJi">
+                                <rect key="frame" x="140" y="275" width="60" height="30"/>
+                                <state key="normal" title="保存裁剪"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xzs-Q0-6jq">
+                                <rect key="frame" x="0.0" y="20" width="321" height="209"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="cropper" destination="fSP-um-ehz" id="sBC-25-GnD"/>
+                        <outlet property="resultImaegeView" destination="xzs-Q0-6jq" id="cTC-AX-7tP"/>
+                        <outlet property="saveCrop" destination="5pI-J6-JJi" id="REN-uT-tzt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="207" y="363"/>
+        </scene>
+        <!--Teacher View Controller-->
+        <scene sceneID="9UR-sk-ce0">
+            <objects>
+                <viewController storyboardIdentifier="teacher" id="Arq-bc-Cm9" customClass="teacherViewController" customModule="图片涂鸦_录音的播放" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="R0J-so-4hr"/>
+                        <viewControllerLayoutGuide type="bottom" id="tj1-5W-pCT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="osd-mX-f6j">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BIT-7D-4mc">
+                                <rect key="frame" x="54" y="269" width="30" height="30"/>
+                                <state key="normal" title="涂鸦"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHi-MP-SAJ">
+                                <rect key="frame" x="17" y="387" width="105" height="30"/>
+                                <state key="normal" title="请选择录音位置"/>
+                                <connections>
+                                    <action selector="chooseLacation:" destination="Arq-bc-Cm9" eventType="touchUpInside" id="D0Z-iu-1wW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gvb-mv-2Nj">
+                                <rect key="frame" x="130" y="269" width="30" height="30"/>
+                                <state key="normal" title="撤销"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w4d-Id-TAr">
+                                <rect key="frame" x="212" y="269" width="30" height="30"/>
+                                <state key="normal" title="保存"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uHi-dk-RPh">
+                                <rect key="frame" x="130" y="387" width="60" height="30"/>
+                                <state key="normal" title="开始录音"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mm-yX-nnX">
+                                <rect key="frame" x="214" y="387" width="60" height="30"/>
+                                <state key="normal" title="结束录音"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CJ1-sG-cdk">
+                                <rect key="frame" x="130" y="480" width="60" height="30"/>
+                                <state key="normal" title="批阅结束"/>
+                                <connections>
+                                    <action selector="savePhoto:" destination="Arq-bc-Cm9" eventType="touchUpInside" id="XDd-j1-Cr1"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rXZ-ks-o8Q">
+                                <rect key="frame" x="0.0" y="20" width="320" height="211"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PEM-8b-5pE" customClass="PIDrawView" customModule="图片涂鸦_录音的播放" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="320" height="211"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="deEditButton" destination="Gvb-mv-2Nj" id="vgb-zX-gq2"/>
+                        <outlet property="drawButton" destination="BIT-7D-4mc" id="91m-z8-w1b"/>
+                        <outlet property="drawView" destination="PEM-8b-5pE" id="IK7-Hl-kl7"/>
+                        <outlet property="resultImageView" destination="rXZ-ks-o8Q" id="mpu-gx-fVC"/>
+                        <outlet property="saveDrawButton" destination="w4d-Id-TAr" id="l8e-te-8zd"/>
+                        <outlet property="startRecoderButton" destination="uHi-dk-RPh" id="NKy-Ie-FpQ"/>
+                        <outlet property="stopRecoderButton" destination="9mm-yX-nnX" id="8QP-KH-KG0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V9h-1a-txI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="698" y="363"/>
+        </scene>
+    </scenes>
+</document>
